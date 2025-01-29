@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view"
+            type="com.app.easy_patient.ui.home.dialog.MedicineDialogFragment" />
+        <variable
+            name="medicineReminder"
+            type="com.app.easy_patient.model.kotlin.MedicineReminder" />
+
+        <variable
+            name="timeAdapter"
+            type="com.app.easy_patient.ui.home.adapter.HomeAdapter" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_20sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/firstLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <TextView android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                tools:text="Pacote de Cuidados"
+                android:textColor="@color/black"
+                android:fontFamily="@font/opensans_semibold"
+                app:medicineTitleText="@{medicineReminder}" />
+
+            <TextView
+                android:id="@+id/txtDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/color_text"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+                app:medicineDescriptionText="@{medicineReminder}"
+                tools:text="Ative os lmebretes de medicamentos ou suolementos que Dr. Rogerio enviou para voce." />
+
+            <TextView
+                android:id="@+id/txtDosage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/color_text"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDesc"
+                app:medicineDosageText="@{medicineReminder}"
+                tools:text="Ative os lmebretes de medicamentos ou suolementos que Dr. Rogerio enviou para voce." />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btnLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/txtDosage">
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/btnAccept"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:text="@string/adiar_str"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    style="@style/SecondaryButton"
+                    app:cancelButtonText="@{medicineReminder}"/>
+
+                <Button
+                    android:id="@+id/btnAccept"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btnCancel"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    style="@style/PrimaryButton"
+                    android:text="@string/sim_str"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/secondLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+            <TextView android:id="@+id/txtSecondTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                android:text="@string/medicine_reminder_second_title_str"
+                tools:text="Pacote de Cuidados"
+                android:textColor="@color/black"
+                android:fontFamily="@font/opensans_semibold"/>
+
+            <ImageView android:id="@+id/imgCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/ic_cancel_black"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtSecondTitle">
+
+                <Button
+                    android:id="@+id/btnTime1"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fifteen_min_str"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    app:cornerRadius="@dimen/_20sdp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnTime2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:strokeColor="@color/colorPrimary"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:onClick="@{() -> view.onTimeClick(15)}"
+                    tools:text="15min" />
+
+                <Button
+                    android:id="@+id/btnTime2"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/thirty_min_str"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    app:cornerRadius="@dimen/_20sdp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnTime3"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btnTime1"
+                    app:strokeColor="@color/colorPrimary"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:onClick="@{() -> view.onTimeClick(30)}"
+                    tools:text="15min" />
+
+                <Button
+                    android:id="@+id/btnTime3"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fourty_min_str"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    app:cornerRadius="@dimen/_20sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btnTime2"
+                    app:strokeColor="@color/colorPrimary"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:onClick="@{() -> view.onTimeClick(40)}"
+                    tools:text="15min" />
+
+                <Button
+                    android:id="@+id/btnTime4"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/one_hour_str"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    app:cornerRadius="@dimen/_20sdp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnTime5"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:strokeColor="@color/colorPrimary"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/btnTime1"
+                    android:onClick="@{() -> view.onTimeClick(60)}"
+                    tools:text="15min" />
+
+                <Button
+                    android:id="@+id/btnTime5"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/one_n_half_hour_str"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    app:cornerRadius="@dimen/_20sdp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnTime6"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btnTime4"
+                    app:strokeColor="@color/colorPrimary"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/btnTime1"
+                    android:onClick="@{() -> view.onTimeClick(90)}"
+                    tools:text="15min" />
+
+                <Button
+                    android:id="@+id/btnTime6"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/two_hours_str"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    app:cornerRadius="@dimen/_20sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btnTime5"
+                    app:strokeColor="@color/colorPrimary"
+                    app:layout_constraintTop_toBottomOf="@+id/btnTime1"
+                    android:onClick="@{() -> view.onTimeClick(120)}"
+                    tools:text="15min" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

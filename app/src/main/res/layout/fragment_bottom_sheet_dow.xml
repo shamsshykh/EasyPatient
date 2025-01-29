@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".fragment.BottomSheetDOW">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/colorBorderLines"
+      android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_weight="1"
+        android:layout_marginStart="32dp"
+        android:padding="16dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="@font/opensans_semibold"
+        android:text="@string/days_week" />
+
+    <ImageView
+        android:id="@+id/img_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:padding="16dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_cancel_black" />
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="16dp"
+      android:layout_gravity="center_horizontal"
+      android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+      <com.google.android.material.checkbox.MaterialCheckBox
+          android:id="@+id/radio1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/all_days"
+          android:textColor="@color/colorText"
+          android:theme="@style/check_color"/>
+
+      <com.google.android.material.checkbox.MaterialCheckBox
+          android:id="@+id/radio2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/monday_str"
+          android:textColor="@color/colorText"
+          android:theme="@style/check_color"/>
+
+      <com.google.android.material.checkbox.MaterialCheckBox
+          android:id="@+id/radio3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/tuesday_str"
+          android:textColor="@color/colorText"
+          android:theme="@style/check_color"/>
+
+      <com.google.android.material.checkbox.MaterialCheckBox
+          android:id="@+id/radio4"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/wednesday_str"
+          android:textColor="@color/colorText"
+          android:theme="@style/check_color"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/colorText"
+        android:orientation="vertical">
+      <com.google.android.material.checkbox.MaterialCheckBox
+          android:id="@+id/radio5"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/thursday_str"
+          android:textColor="@color/colorText"
+          android:theme="@style/check_color"/>
+
+      <com.google.android.material.checkbox.MaterialCheckBox
+          android:id="@+id/radio6"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/friday_str"
+          android:textColor="@color/colorText"
+          android:theme="@style/check_color"/>
+
+      <com.google.android.material.checkbox.MaterialCheckBox
+          android:id="@+id/radio7"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/saturday_str"
+          android:textColor="@color/colorText"
+          android:theme="@style/check_color"/>
+
+      <com.google.android.material.checkbox.MaterialCheckBox
+          android:id="@+id/radio8"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/sunday_str"
+          android:textColor="@color/colorText"
+          android:theme="@style/check_color"/>
+    </LinearLayout>
+  </LinearLayout>
+
+  <Button
+      android:id="@+id/btn_ok"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="16dp"
+      android:layout_marginTop="16dp"
+      android:layout_gravity="center"
+      android:paddingStart="@dimen/_40sdp"
+      android:paddingEnd="@dimen/_40sdp"
+      style="@style/Widget.MaterialComponents.Button"
+      android:textColor="@color/colorWhite"
+      android:text="@string/ok_str"
+      android:textAllCaps="false"
+      app:cornerRadius="@dimen/_20sdp"/>
+
+</LinearLayout>

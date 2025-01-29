@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite"
+    tools:context=".activity.UploadProfileImageActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/AppToolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/img_gallery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_library"
+            android:text="@string/library"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/img_camera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_camera"
+            android:text="@string/photo"
+            android:textColor="@color/colorPrimary"/>
+    </LinearLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/place_holder"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/tv_delete_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:text="@string/delete_photo"
+        android:textColor="@color/colorPrimary"/>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:text="@string/confirm"
+        android:textColor="@android:color/white"
+        app:cornerRadius="@dimen/_20sdp"
+        style="@style/Widget.MaterialComponents.Button"
+        android:textAllCaps="false"
+        android:minHeight="@dimen/_30sdp"/>
+</LinearLayout>

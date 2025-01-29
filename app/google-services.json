@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "149705620254",
+    "project_id": "easypatient-7a1b3",
+    "storage_bucket": "easypatient-7a1b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149705620254:android:c20efc62dfae3949cae70f",
+        "android_client_info": {
+          "package_name": "com.app.easy_patient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "149705620254-ijtdbs1ds62su2c7pf6jgitcjbirbj98.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIO_2fhaK4TrKqn-QIvg376ZJNHAk2txo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "149705620254-ijtdbs1ds62su2c7pf6jgitcjbirbj98.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

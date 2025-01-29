@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/homeFragment"
+        android:title="@string/home_nav_str"
+        android:icon="@drawable/ic_baseline_home_24"/>
+
+    <item android:id="@+id/medicineFragment"
+        android:title="@string/med_nav_str"
+        android:icon="@drawable/ic_baseline_med_24"/>
+
+    <item android:id="@+id/appointmentFragment"
+        android:title="@string/appointments"
+        android:icon="@drawable/ic_baseline_appointment_24"/>
+
+    <item android:id="@+id/moreFragment"
+        android:title="@string/most_nav_str"
+        android:icon="@drawable/ic_baseline_more_24"/>
+
+</menu>

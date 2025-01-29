@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="notification"
+            type="com.app.easy_patient.model.kotlin.Notification" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardElevation="0dp"
+        card_view:cardPreventCornerOverlap="false"
+        card_view:cardCornerRadius="@dimen/_6sdp"
+        card_view:cardBackgroundColor="@color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:paddingTop="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_16sdp"
+            android:drawablePadding="@dimen/_8sdp"
+            android:textColor="@color/color_text"
+            android:textSize="@dimen/_14ssp"
+            android:drawableLeft="@drawable/ic_notification_home"
+            android:fontFamily="@font/opensans_regular"
+            android:text="@{notification.title}"
+            tools:text="Dr. Rogério te enviou um pacote de lembretes."/>
+
+    </androidx.cardview.widget.CardView>
+</layout>

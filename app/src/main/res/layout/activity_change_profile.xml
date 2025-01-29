@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.app.easy_patient.activity.change_profile.ChangeProfileActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorWhite"
+        tools:context=".activity.UploadProfileImageActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            style="@style/Theme.EasyPatient.Toolbar"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/img_gallery"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:drawableTop="@drawable/ic_library"
+                android:text="@string/gallery_str"
+                android:textSize="@dimen/_12ssp"
+                android:drawablePadding="4dp"
+                android:textColor="@color/colorPrimary"
+                android:onClick="onLibraryClick"/>
+
+            <TextView
+                android:id="@+id/img_camera"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_camera"
+                android:text="@string/camera_str"
+                android:drawablePadding="4dp"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/colorPrimary"
+                android:onClick="onCameraClick"/>
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/place_holder"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/tv_delete_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center_horizontal"
+            android:text="@string/delete_photo"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/colorPrimary"
+            android:onClick="onDeletePicClick"/>
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:text="@string/confirm"
+            style="@style/PrimaryButton"
+            android:onClick="onConfirmBtnClick"/>
+    </LinearLayout>
+</layout>

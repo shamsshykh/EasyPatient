@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/empty"
+        android:icon="@drawable/ic_icon_menu"
+        android:orderInCategory="101"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/action_share"
+                android:icon="@drawable/ic_icon_share"
+                app:showAsAction="always|withText"
+                android:title="@string/share_str"
+                android:iconTint="@color/black">
+            </item>
+
+            <item
+                android:id="@+id/action_archive"
+                android:icon="@drawable/ic_icon_archive"
+                app:showAsAction="always|withText"
+                android:title="@string/ocultar_str"
+                android:iconTint="@color/black">
+            </item>
+
+            <item
+                android:id="@+id/action_download"
+                android:icon="@drawable/ic_icon_download"
+                app:showAsAction="always|withText"
+                android:title="@string/download_str"
+                android:iconTint="@color/black">
+            </item>
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.ProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="26dp"
+                android:layout_marginBottom="32dp"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_marginTop="32dp"
+                    android:src="@drawable/place_holder"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="@color/colorPrimary"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="26dp"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    style="@style/Theme.EasyPatient.Field">
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/name"
+                    android:textColor="@color/textColor"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_14ssp"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    style="@style/Theme.EasyPatient.Field">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/e_mail"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/_14ssp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/il_et_cpf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"
+                    style="@style/Theme.EasyPatient.Field">
+                <EditText
+                    android:id="@+id/et_cpf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:digits="0123456789 -."
+                    android:maxLength="14"
+                    android:hint="CPF"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/_14ssp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    style="@style/Theme.EasyPatient.Field">
+                <EditText
+                    android:id="@+id/et_birth_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/birthdate"
+                    android:focusable="false"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/_14ssp"
+                    android:clickable="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    style="@style/Theme.EasyPatient.Field">
+
+                    <com.app.easy_patient.util.InstantAutoComplete
+                        android:id="@+id/spinner_gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/gender_str"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/_14ssp"
+                        android:drawableEnd="@drawable/ic_baseline_expand_more_24" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tv_change_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="32dp"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_14ssp"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:text="@string/change_password"/>
+
+                <Button
+                    android:id="@+id/btn_confirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="36dp"
+                    android:text="@string/confirm"
+                    android:textAllCaps="false"
+                    style="@style/PrimaryButton"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

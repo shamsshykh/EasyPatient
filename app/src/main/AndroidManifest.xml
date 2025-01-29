@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.app.easy_patient">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <!--
+         The ACCESS_COARSE/FINE_LOCATLION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"
+        android:exported= "false"
+        tools:node="merge"/>
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EasyPatient.NoActionBar"
+        android:usesCleartextTraffic="true"
+        android:exported= "false"
+        tools:node="merge">
+        <activity
+            android:name=".activity.medicine_reminder.MedicineReminderActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:showForAllUsers="true"
+            android:taskAffinity=""
+            android:exported="true"/>
+        <activity
+            android:name=".activity.audio_detail.AudioDetailActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.change_profile.ChangeProfileActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MealPlanDetailActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.TermsActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.OrientationDetailActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:exported="true"/>
+        <activity
+            android:name=".activity.ResetPasswordActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+        <activity
+            android:name=".activity.OTPActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+        <activity android:name=".activity.BaseActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".activity.CompleteRegistrationActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+        <activity
+            android:name=".activity.MedicinePictureActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+        <activity
+            android:name=".activity.appointment_detail.AppointmentDetailActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".activity.MapsActivity"
+            android:label="@string/title_activity_maps"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AppointmentsDetailActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ChangePasswordActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PrescriptionDetailActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.NewMedicineActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.dashboard.DashboardActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true" />
+        <activity
+            android:name=".activity.RegistrationActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.onboarding.OnBoardingActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EasyPatient.OnBoarding" />
+
+        <receiver
+            android:name=".receiver.BootReceiver"
+            android:enabled="false"
+            android:exported= "false">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <!--For HTC devices-->
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".receiver.MedicineReminderReceiver"
+            android:enabled="true"
+            android:exported="false"
+            tools:node="merge"/>
+
+        <receiver
+            android:name=".receiver.AppointmentReceiver"
+            android:enabled="true"
+            android:exported="false"
+            tools:node="merge"/>
+
+        <service
+            android:name=".util.SoundService"
+            android:exported="false"
+            tools:node="merge"/>
+        <!-- Remove WorkManager default initialization -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup"
+                tools:node="remove" />
+        </provider>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            tools:node="merge"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <receiver
+            android:name=".receiver.NotificationCancelReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="notification_cancelled"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

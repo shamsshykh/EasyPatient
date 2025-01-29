@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/easy_patient_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.app.easy_patient.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mealPlanFragment"
+            app:destination="@id/mealPlanFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_prescriptionFragment"
+            app:destination="@id/prescriptionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_orientationFragment"
+            app:destination="@id/orientationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_audioFragment"
+            app:destination="@id/audioFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationDialogFragment"
+            app:destination="@id/notificationDialogFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_medicineReminderDialogFragment"
+            app:destination="@id/medicineReminderDialogFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.app.easy_patient.ui.sidemenu.SideMenuFragment"
+        android:label="fragment_side_menu"
+        tools:layout="@layout/fragment_side_menu" >
+        <action
+            android:id="@+id/action_moreFragment_to_homeFragment"
+            app:destination="@id/homeFragment"/>
+        <action
+            android:id="@+id/action_moreFragment_to_appointmentFragment"
+            app:destination="@id/appointmentFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_medicineFragment"
+            app:destination="@id/medicineFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_orientationFragment"
+            app:destination="@id/orientationFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_prescriptionFragment"
+            app:destination="@id/prescriptionFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_audioFragment"
+            app:destination="@id/audioFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_mealPlanFragment"
+            app:destination="@id/mealPlanFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/medicineFragment"
+        android:name="com.app.easy_patient.ui.medicine.MedicineFragment"
+        android:label="fragment_medicine"
+        tools:layout="@layout/fragment_medicine" />
+
+    <fragment
+        android:id="@+id/appointmentFragment"
+        android:name="com.app.easy_patient.ui.appointment.AppointmentFragment"
+        android:label="fragment_appointment_new"
+        tools:layout="@layout/fragment_appointment" />
+
+    <fragment
+        android:id="@+id/orientationFragment"
+        android:name="com.app.easy_patient.fragment.OrientationsFragment"
+        android:label="fragment_orientation"
+        tools:layout="@layout/fragment_orientations">
+
+        <action
+            android:id="@+id/action_orientationFragment_to_archivedOrientationFragment"
+            app:destination="@id/archivedOrientationFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/archivedOrientationFragment"
+        android:name="com.app.easy_patient.fragment.ArchivedOrientationFragment"
+        android:label="archiveOrientation"
+        tools:layout="@layout/fragment_archived_orientation" />
+
+    <fragment
+        android:id="@+id/prescriptionFragment"
+        android:name="com.app.easy_patient.fragment.PrescriptionsFragment"
+        android:label="fragment_prescription"
+        tools:layout="@layout/fragment_prescriptions">
+        <action
+            android:id="@+id/action_prescriptionFragment_to_archivePrescriptionFragment"
+            app:destination="@id/archivePrescriptionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/archivePrescriptionFragment"
+        android:name="com.app.easy_patient.fragment.ArchivePrescriptionsFragment"
+        android:label="ArchivePrescription"
+        tools:layout="@layout/fragment_archive_prescriptions" />
+
+    <fragment
+        android:id="@+id/mealPlanFragment"
+        android:name="com.app.easy_patient.fragment.MealPlanFragment"
+        android:label="fragment_meal_plan"
+        tools:layout="@layout/fragment_meal_plan">
+
+        <action
+            android:id="@+id/action_mealPlanFragment_to_archivedMealPlanFragment"
+            app:destination="@id/archivedMealPlanFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/archivedMealPlanFragment"
+        android:name="com.app.easy_patient.fragment.ArchivedMealPlanFragment"
+        android:label="archivedMealPlanFragment"
+        tools:layout="@layout/fragment_archived_meal_plan" />
+
+    <fragment
+        android:id="@+id/audioFragment"
+        android:name="com.app.easy_patient.ui.audio.AudioFragment"
+        android:label="fragment_audio"
+        tools:layout="@layout/fragment_audio">
+        <action
+            android:id="@+id/action_audioFragment_to_archiveAudioFragment"
+            app:destination="@id/archiveAudioFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/archiveAudioFragment"
+        android:name="com.app.easy_patient.ui.audio_archive.ArchiveAudioFragment"
+        android:label="fragment_archive_audio"
+        tools:layout="@layout/fragment_archive_audio" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.app.easy_patient.fragment.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.app.easy_patient.fragment.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingFragment_to_deleteAccountFragment"
+            app:destination="@id/deleteAccountFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/deleteAccountFragment"
+        android:name="com.app.easy_patient.ui.delete_account.DeleteAccountFragment"
+        android:label="fragment_delete_account"
+        tools:layout="@layout/fragment_delete_account" />
+
+    <dialog
+        android:id="@+id/notificationDialogFragment"
+        android:name="com.app.easy_patient.ui.home.dialog.NotificationDialogFragment"
+        android:label="NotificationDialogFragment"
+        tools:layout="@layout/notification_dialog_bottom_sheet">
+        <action
+            android:id="@+id/action_notificationDialogFragment_to_medicineFragment"
+            app:destination="@id/medicineFragment"/>
+    </dialog>
+
+    <dialog
+        android:id="@+id/medicineReminderDialogFragment"
+        android:name="com.app.easy_patient.ui.home.dialog.MedicineDialogFragment"
+        android:label="MedicineDialogFragment"
+        tools:layout="@layout/medicine_dialog_bottom_sheet"/>
+</navigation>

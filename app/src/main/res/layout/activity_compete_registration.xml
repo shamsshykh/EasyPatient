@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".activity.CompleteRegistrationActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="54dp"
+    android:orientation="vertical"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/medicine_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="38dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/circuler_bg"
+        android:text="?"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="22dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/you_did_not_complete_your_registration"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:text="@string/no"
+            style="@style/SecondaryButton"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/btn_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:text="@string/yes"
+            android:textColor="@android:color/white"
+            style="@style/PrimaryButton"
+            android:textAllCaps="false"
+            android:onClick="onClick"/>
+    </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

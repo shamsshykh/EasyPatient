@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.app.easy_patient.ktx.TheKtxKt"/>
+
+        <variable
+            name="appointment"
+            type="com.app.easy_patient.model.kotlin.Appointment" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootItemLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/txtAppointmentStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:fontFamily="@font/opensans_semibold"
+            android:textStyle="bold"
+            android:textColor="#50B76C"
+            tools:text="Confirmado"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:appointment_status="@{appointment}"/>
+
+        <TextView
+            android:id="@+id/txtAppointmentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:fontFamily="@font/opensans_semibold"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            tools:text="09:30"
+            android:text="@{TheKtxKt.appointmentTime(appointment)}"/>
+
+        <TextView
+            android:id="@+id/txtAppointmentInfo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:fontFamily="@font/opensans_semibold"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintTop_toBottomOf="@+id/txtAppointmentTime"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            tools:text="qui, 05 de dezembro"
+            android:text="@{TheKtxKt.appointmentDate(appointment, false)}"/>
+
+        <TextView
+            android:id="@+id/txtAppointmentInfo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/colorText"
+            app:layout_constraintTop_toBottomOf="@+id/txtAppointmentInfo1"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            tools:text="Clínica Florianópolis"
+            android:text="@{appointment.clinic}"/>
+
+        <TextView
+            android:id="@+id/txtAppointmentInfo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/colorText"
+            app:layout_constraintTop_toBottomOf="@+id/txtAppointmentInfo2"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            tools:text="Dr José Paulo Fontes"
+            android:text="@{@string/doctor_str(appointment.specialist)}"/>
+
+        <TextView
+            android:id="@+id/txtAppointmentInfo4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/colorText"
+            app:layout_constraintTop_toBottomOf="@+id/txtAppointmentInfo3"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            tools:text="Retorno"
+            android:text="@{appointment.type}"/>
+
+        <TextView
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/textColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAppointmentInfo4"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:alpha="0.1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_forward"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/separator"
+            android:layout_marginEnd="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

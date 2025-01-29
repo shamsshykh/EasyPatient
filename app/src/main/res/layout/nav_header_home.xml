@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorDrawerBG"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:padding="@dimen/_10sdp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_gravity="center_vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/profile_pic_female"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/colorPrimary"/>
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/_4sdp"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_12ssp"
+        android:fontFamily="@font/opensans_regular"
+        tools:text="Juliana Topolski"/>
+
+    <ImageView
+        android:id="@+id/img_edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".2"
+        android:layout_gravity="center_vertical"
+        android:padding="@dimen/nav_header_vertical_spacing"
+        android:src="@drawable/ic_edit" />
+</LinearLayout>
+<View
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:background="@color/colorDrawerLine"/>
+</LinearLayout>

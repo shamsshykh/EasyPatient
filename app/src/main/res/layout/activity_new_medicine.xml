@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".activity.NewMedicineActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Theme.EasyPatient.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="32dp"
+                    android:background="@drawable/circuler_bg"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/medicine_image"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:padding="6dp"
+                        android:src="@drawable/ic_med_1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_custom_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginBottom="32dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/medicine_image_custom"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="32dp"
+                        app:civ_border_color="@color/colorPrimary"
+                        app:civ_border_width="1dp" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/nowBtn"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Click For Alarm"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="26dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Input_layout_medicine_name"
+                    style="@style/Theme.EasyPatient.Field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_medicine_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/medicine_name"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:nextFocusDown="@id/input_layout_dosages"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/colorText"
+                        android:textSize="@dimen/_12ssp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_layout_dosages"
+                    style="@style/Theme.EasyPatient.Field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp">
+
+                    <EditText
+                        android:id="@+id/et_dosage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/dosage"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/colorText"
+                        android:textSize="@dimen/_12ssp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_layout_start_time"
+                    style="@style/Theme.EasyPatient.Field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp">
+
+                    <EditText
+                        android:id="@+id/et_start_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:hint="@string/start_time"
+                        android:onClick="onClick"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/colorText"
+                        android:textSize="@dimen/_12ssp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_layout_no_days"
+                        style="@style/Theme.EasyPatient.Field"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:paddingTop="8dp"
+                        app:layout_constraintEnd_toStartOf="@+id/inputDuration"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <EditText
+                            android:id="@+id/et_no_days"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/no_days"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:textColor="@color/textColor"
+                            android:textColorHint="@color/colorText"
+                            android:textSize="@dimen/_12ssp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputDuration"
+                        style="@style/Theme.EasyPatient.Field"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.app.easy_patient.util.InstantAutoComplete
+                            android:id="@+id/spinner_duration"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/ic_baseline_expand_more_16"
+                            android:hint="@string/days_cap_str"
+                            android:textColor="@color/textColor"
+                            android:textColorHint="@color/colorText"
+                            android:textSize="@dimen/_12ssp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_layout_frequency"
+                    style="@style/Theme.EasyPatient.Field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp">
+
+                    <EditText
+                        android:id="@+id/spinner_frequency"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:drawableEnd="@drawable/ic_baseline_expand_more_16"
+                        android:focusable="false"
+                        android:hint="@string/frequency"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/colorText"
+                        android:textSize="@dimen/_12ssp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Theme.EasyPatient.Field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/et_days_week"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:hint="@string/days_week"
+                        android:onClick="onClick"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/colorText"
+                        android:textSize="@dimen/_12ssp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <Switch
+                        android:id="@+id/switch_notification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_14ssp"
+                        android:theme="@style/SCBSwitch" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_regular"
+                        android:text="@string/notification_str"
+                        android:textColor="@color/colorText"
+                        android:textSize="@dimen/_12ssp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <Switch
+                        android:id="@+id/switch_critical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/SCBSwitch" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_regular"
+                            android:text="@string/critical_str"
+                            android:textColor="@color/colorText"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/critical_desc_str"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/_10ssp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_confirm"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:letterSpacing="0"
+                    android:onClick="onClick"
+                    android:padding="8dp"
+                    android:text="@string/confirm"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_12ssp"
+                    app:cornerRadius="@dimen/_20sdp" />
+
+                <Button
+                    android:id="@+id/btn_delete"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:clickable="true"
+                    app:icon="@drawable/ic_delete"
+                    app:iconTint="@color/colorCancel"
+                    app:iconPadding="4dp"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:gravity="center"
+                    android:letterSpacing="0"
+                    android:onClick="onClick"
+                    android:text="@string/delete_medicine_str"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorCancel"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone"
+                    app:cornerRadius="@dimen/_20sdp"
+                    app:strokeColor="@color/colorCancel"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <!--    <include layout="@layout/bottom_sheet_dow" />-->
+
+</LinearLayout>

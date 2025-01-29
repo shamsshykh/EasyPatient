@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#C1AB60</color>
+    <color name="colorPrimaryDark">#AB9B6A</color>
+    <color name="colorAccent">#82848D</color>
+    <color name="colorInfo">#50A3B7</color>
+    <color name="colorBottomNavigation">#EAECEF</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorText">#82848D</color>
+    <color name="colorBlack">#2A2A31</color>
+    <color name="colorOrientationBottomToolbar">#9CA299</color>
+    <color name="colorCardViewBG">#EDFFF2</color>
+    <color name="colorDrawerBG">#2A2A31</color>
+    <color name="colorDrawerLine">#000000</color>
+    <color name="colorDrawerItem">#BCC0C7</color>
+    <color name="colorBorderLines">#EAECEF</color>
+    <color name="colorCancel">#B75450</color>
+    <color name="colorConfirm">#50B76C</color>
+    <color name="errorColor">#B75450</color>
+    <color name="colorLineAppointmentDetail">#E7E9EC</color>
+    <color name="colorOnboarding">#4B5558</color>
+    <color name="colorOnboardingHighlight">#C1AB60</color>
+    <color name="statusBarColor">#E4EEF1</color>
+    <color name="shimmerBackground">#dddddd</color>
+
+    <color name="textColor">#55565C</color>
+    <color name="defaultTextColor">#55565C</color>
+    <color name="greenColor">#50B76C</color>
+    <color name="lightBlueColor">#54A5B8</color>
+    <color name="colorMenuHighlight">#88888D</color>
+
+
+    <color name="color_primary">#C1AB60</color>
+    <color name="color_primary_dark">#AB9B6A</color>
+    <color name="color_on_primary">#FFFFFF</color>
+    <color name="color_secondary">#82848D</color>
+    <color name="color_secondary_dark">#55565C</color>
+    <color name="color_on_secondary">#FFFFFF</color>
+    <color name="color_background">#F7F7F7</color>
+    <color name="color_on_background">#FFFFFF</color>
+    <color name="color_error">#AC0000</color>
+
+    <!-- Colors for App -->
+    <color name="background">#EEF6F8</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="loading_gray">#CCCCCC</color>
+    <color name="color_icon_gray">#A3A3A3</color>
+    <color name="text_normal">#676767</color>
+    <color name="text_emphasized">#393939</color>
+    <color name="light_green">#8EE193</color>
+    <color name="dark_green">#3F7342</color>
+    <color name="color_logout">#AC0000</color>
+    <color name="color_text">#2A2A31</color>
+</resources>

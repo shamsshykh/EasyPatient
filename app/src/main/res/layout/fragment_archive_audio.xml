@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.app.easy_patient.wrappers.Resource"/>
+        <variable
+            name="viewmodel"
+            type="com.app.easy_patient.activity.dashboard.DashboardViewModel" />
+        <variable
+            name="audioAdapter"
+            type="com.app.easy_patient.adapter.AudioAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewAppointment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:setAdapter="@{audioAdapter}"
+            app:adapterDataSet="@{viewmodel.archiveAudioList}"
+            app:refreshList="@{true}"
+            app:visible_flag="@{viewmodel.archiveAudioList instanceof Resource.Success || viewmodel.audioList instanceof Resource.Loading}"
+            tools:itemCount="7"
+            tools:listitem="@layout/appointment_item_layout"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/imgNoAppointment"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_selected_healthtab"
+            app:layout_constraintBottom_toTopOf="@+id/txtNoAppointment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewAppointment"
+            app:visible_flag="@{viewmodel.archiveAudioList instanceof Resource.Empty || viewmodel.audioList instanceof Resource.Error}"
+            />
+
+        <TextView
+            android:id="@+id/txtNoAppointment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_document_arc"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerViewAppointment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgNoAppointment"
+            android:textColor="@color/textColor"
+            android:layout_marginTop="10dp"
+            app:visible_flag="@{viewmodel.archiveAudioList instanceof Resource.Empty || viewmodel.audioList instanceof Resource.Error}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

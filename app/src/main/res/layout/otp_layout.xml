@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/pin_content_layout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_label_text"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/pin_label_margin"
+        android:fontFamily="@font/opensans_regular"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/colorText"
+        android:layout_marginTop="30dp"/>
+
+    <LinearLayout android:id="@+id/pin_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal">
+
+        <EditText android:id="@+id/pin_first_edittext"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_45sdp"
+            style="@style/pin_edittext_style" />
+
+        <EditText android:id="@+id/pin_second_edittext"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_45sdp"
+            style="@style/pin_edittext_style" />
+
+        <EditText android:id="@+id/pin_third_edittext"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_45sdp"
+            style="@style/pin_edittext_style" />
+
+        <EditText android:id="@+id/pin_forth_edittext"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_45sdp"
+            style="@style/pin_edittext_style" />
+
+    </LinearLayout>
+
+    <EditText android:id="@+id/pin_hidden_edittext"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:background="@null"
+        android:maxLength="4"
+        android:inputType="number"
+        android:textColor="#00000000" />
+</LinearLayout>

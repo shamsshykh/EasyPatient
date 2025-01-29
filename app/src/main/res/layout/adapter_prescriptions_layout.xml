@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:padding="16dp"
+    android:background="@drawable/bg_item"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            style="@style/tv_style_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_received"
+                android:drawablePadding="5dp"
+                android:text="@string/received_on_str"
+                android:textStyle="bold"
+                style="@style/tv_style"/>
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tv_style"/>
+
+            <TextView
+                android:id="@+id/tv_validity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/valid_status_str"
+                android:layout_marginStart="5dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:background="@drawable/bg_valid"
+                style="@style/tv_style"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_specialist"
+                android:drawablePadding="5dp"
+                android:text="@string/specialist_str"
+                android:textStyle="bold"
+                style="@style/tv_style"/>
+
+            <TextView
+                android:id="@+id/tv_specialist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/tv_style"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_archive_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_archive" />
+
+</LinearLayout>

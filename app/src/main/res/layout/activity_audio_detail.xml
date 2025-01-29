@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.app.easy_patient.wrappers.Resource"/>
+        <import type="com.app.easy_patient.ktx.TheKtxKt"/>
+        <variable
+            name="audio"
+            type="com.app.easy_patient.model.kotlin.Audio" />
+
+        <variable
+            name="viewmodel"
+            type="com.app.easy_patient.activity.audio_detail.AudioDetailViewModel" />
+
+        <variable
+            name="view"
+            type="com.app.easy_patient.activity.audio_detail.AudioDetailActivity" />
+
+        <variable
+            name="audioFileAdapter"
+            type="com.app.easy_patient.adapter.AudioFileAdapter" />
+
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:id="@+id/swipeRefresh"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        tools:context=".activity.audio_detail.AudioDetailActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            style="@style/Theme.EasyPatient.Toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtTitleSchedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/scheduling_data_str"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <TextView
+            android:id="@+id/separator_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.1"
+            android:background="@color/textColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitleSchedule" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_schedule_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator_1">
+
+            <TextView
+                android:id="@+id/txtAppointmentInfo1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/date_title_str"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintEnd_toStartOf="@+id/txtAppointmentInfo1Value"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtAppointmentInfo1Value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/txtAppointmentInfo1"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@{TheKtxKt.audioDate(audio)}"
+                tools:text="qui, 05 de dezembro" />
+
+            <TextView
+                android:id="@+id/txtAppointmentInfo2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/clinic_title_str"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintEnd_toStartOf="@+id/txtAppointmentInfo2Value"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAppointmentInfo1" />
+
+            <TextView
+                android:id="@+id/txtAppointmentInfo2Value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/txtAppointmentInfo2"
+                app:layout_constraintTop_toBottomOf="@+id/txtAppointmentInfo1"
+                android:text="@{audio.clinic_name}"
+                tools:text="Clínica Florianópolis" />
+
+            <TextView
+                android:id="@+id/txtAppointmentInfo3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/specialist_title_str"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintEnd_toStartOf="@+id/txtAppointmentInfo3Value"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAppointmentInfo2" />
+
+            <TextView
+                android:id="@+id/txtAppointmentInfo3Value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/txtAppointmentInfo3"
+                app:layout_constraintTop_toBottomOf="@+id/txtAppointmentInfo2"
+                android:text="@{@string/doctor_str(audio.specialist)}"
+                tools:text="Dr José Paulo Fontes" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/txtTitleRoute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/audios_str"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_schedule_info" />
+
+        <TextView
+            android:id="@+id/separator_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.1"
+            android:background="@color/textColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitleRoute" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/audiosRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/separator_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:setAdapter="@{audioFileAdapter}"
+            app:adapterDataSet="@{viewmodel.audioFiles}"
+            app:visible_flag="@{viewmodel.audioFiles instanceof Resource.Success}"
+            tools:itemCount="7"
+            tools:listitem="@layout/audio_file_item_layout"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

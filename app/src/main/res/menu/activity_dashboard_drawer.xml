@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item
+            android:id="@+id/nav_medicines"
+            android:icon="@mipmap/ic_medicines_drawer"
+            android:title="@string/medicines" />
+        <item
+            android:id="@+id/nav_prescriptions"
+            android:icon="@mipmap/ic_prescriptions_drawer"
+            android:title="@string/prescriptions" />
+        <item
+            android:id="@+id/nav_orientations"
+            android:icon="@mipmap/ic_orientations_drawer"
+            android:title="@string/orientations" />
+
+        <item
+            android:id="@+id/nav_meal_plans"
+            android:icon="@mipmap/ic_meal_plans_drawer"
+            android:title="@string/meal_plan_str" />
+
+        <item
+            android:id="@+id/nav_documents"
+            android:icon="@mipmap/ic_health_tab"
+            android:title="@string/document_str" />
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@mipmap/ic_settings_drawer"
+            android:title="@string/settings"/>
+
+
+</menu>

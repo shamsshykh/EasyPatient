@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.appointment_detail.AppointmentDetailActivity">
+
+    <data>
+
+        <import type="com.app.easy_patient.ktx.TheKtxKt" />
+
+        <variable
+            name="appointment"
+            type="com.app.easy_patient.model.kotlin.Appointment" />
+
+        <variable
+            name="viewmodel"
+            type="com.app.easy_patient.activity.appointment_detail.AppointmentDetailViewModel" />
+
+        <variable
+            name="view"
+            type="com.app.easy_patient.activity.appointment_detail.AppointmentDetailActivity" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Theme.EasyPatient.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtTitleStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:text="@string/status_str"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtAppointmentStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textColor="#50B76C"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:appointment_status="@{appointment}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Confirmado" />
+
+                <TextView
+                    android:id="@+id/separator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:alpha="0.1"
+                    android:background="@color/textColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTitleStatus" />
+
+                <TextView
+                    android:id="@+id/appointmentTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:appointment_status_title="@{appointment.schedule_status_id}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/separator"
+                    tools:text="Agendamento de consulta confirmado." />
+
+                <TextView
+                    android:id="@+id/appointmentDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/colorText"
+                    android:textSize="15sp"
+                    app:appointment_status_desc="@{appointment.schedule_status_id}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/appointmentTitle"
+                    tools:text="Para mudar ou cancelar a consulta, contate a clínica usando os contatos abaixo." />
+
+                <TextView
+                    android:id="@+id/txtTitleSchedule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:text="@string/scheduling_data_str"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/appointmentDesc" />
+
+                <TextView
+                    android:id="@+id/separator_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:alpha="0.1"
+                    android:background="@color/textColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTitleSchedule" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_schedule_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/separator_1">
+
+                    <TextView
+                        android:id="@+id/txtAppointmentTime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/time_title_str"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toStartOf="@+id/txtAppointmentTimeValue"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtAppointmentTimeValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@{TheKtxKt.appointmentTime(appointment)}"
+                        android:textColor="@color/colorText"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/txtAppointmentTime"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="09:30" />
+
+                    <TextView
+                        android:id="@+id/txtAppointmentInfo1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date_title_str"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toStartOf="@+id/txtAppointmentInfo1Value"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtAppointmentTime" />
+
+                    <TextView
+                        android:id="@+id/txtAppointmentInfo1Value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@{TheKtxKt.appointmentDate(appointment, true)}"
+                        android:textColor="@color/colorText"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/txtAppointmentInfo1"
+                        app:layout_constraintTop_toBottomOf="@+id/txtAppointmentTime"
+                        tools:text="qui, 05 de dezembro" />
+
+                    <TextView
+                        android:id="@+id/txtAppointmentInfo2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/clinic_title_str"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toStartOf="@+id/txtAppointmentInfo2Value"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtAppointmentInfo1" />
+
+                    <TextView
+                        android:id="@+id/txtAppointmentInfo2Value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@{appointment.clinic}"
+                        android:textColor="@color/colorText"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/txtAppointmentInfo2"
+                        app:layout_constraintTop_toBottomOf="@+id/txtAppointmentInfo1"
+                        tools:text="Clínica Florianópolis" />
+
+                    <TextView
+                        android:id="@+id/txtAppointmentInfo3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/specialist_title_str"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toStartOf="@+id/txtAppointmentInfo3Value"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtAppointmentInfo2" />
+
+                    <TextView
+                        android:id="@+id/txtAppointmentInfo3Value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@{@string/doctor_str(appointment.specialist)}"
+                        android:textColor="@color/colorText"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/txtAppointmentInfo3"
+                        app:layout_constraintTop_toBottomOf="@+id/txtAppointmentInfo2"
+                        tools:text="Dr José Paulo Fontes" />
+
+                    <TextView
+                        android:id="@+id/txtAppointmentInfo4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/type_title_str"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toStartOf="@+id/txtAppointmentInfo4Value"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtAppointmentInfo3" />
+
+                    <TextView
+                        android:id="@+id/txtAppointmentInfo4Value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@{appointment.type}"
+                        android:textColor="@color/colorText"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/txtAppointmentInfo4"
+                        app:layout_constraintTop_toBottomOf="@+id/txtAppointmentInfo3"
+                        tools:text="Retorno" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_route"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="20dp"
+                    visible_flag="@{TheKtxKt.routeVisibility(appointment)}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_schedule_info">
+
+
+                    <TextView
+                        android:id="@+id/txtTitleRoute"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_semibold"
+                        android:text="@string/route_title_str"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/separator_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:alpha="0.1"
+                        android:background="@color/textColor"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtTitleRoute" />
+
+                    <TextView
+                        android:id="@+id/tvClinicName"
+                        visible_flag="@{TheKtxKt.routeTitleVisibility(appointment)}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{appointment.clinic}"
+                        android:textColor="@color/colorText"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/separator_2"
+                        tools:text="Clínica Florianópolis" />
+
+                    <TextView
+                        android:id="@+id/tvClinicAddress"
+                        visible_flag="@{TheKtxKt.routeAddressVisibility(appointment)}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{TheKtxKt.sortClinicAddress(appointment.address)}"
+                        android:textColor="@color/colorText"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvClinicName"
+                        tools:text="Rua Hercílio Luz, 810 - sala 1102 Centro, Florianópolis/SC" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <include
+                    android:id="@+id/btnClinicRoute"
+                    layout="@layout/button_layout"
+                    visible_flag="@{TheKtxKt.routeBtnVisibility(appointment)}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:onClick="@{()-> view.onShowRouteClick(appointment)}"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_route"
+                    app:mySrc="@{@drawable/ic_car}"
+                    app:myText="@{@string/route_address_str}" />
+
+                <TextView
+                    android:id="@+id/tvContactTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:text="@string/contact_title_str"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnClinicRoute"
+                    app:visible_flag="@{TheKtxKt.showContactTitle(appointment)}" />
+
+                <include
+                    android:id="@+id/btnClinicPhone"
+                    layout="@layout/button_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:onClick="@{()-> view.onPhoneClick(appointment)}"
+                    app:layout_constraintTop_toBottomOf="@+id/tvContactTitle"
+                    app:mySrc="@{@drawable/ic_phone}"
+                    app:myText="@{appointment.phone}"
+                    app:visible_flag="@{TheKtxKt.showPhone(appointment)}" />
+
+
+                <include
+                    android:id="@+id/btnClinicWhatsapp"
+                    layout="@layout/button_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:onClick="@{()-> view.onWhatsappClick(appointment)}"
+                    app:layout_constraintTop_toBottomOf="@+id/btnClinicPhone"
+                    app:mySrc="@{@drawable/ic_whatsapp}"
+                    app:myText="@{appointment.whatsapp_value}"
+                    app:visible_flag="@{TheKtxKt.showWhatsapp(appointment)}" />
+
+                <include
+                    android:id="@+id/btnClinicEmail"
+                    layout="@layout/button_layout"
+                    visible_flag="@{TheKtxKt.showEmail(appointment)}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:onClick="@{()-> view.onEmailClick(appointment)}"
+                    app:layout_constraintTop_toBottomOf="@+id/btnClinicWhatsapp"
+                    app:mySrc="@{@drawable/ic_email}"
+                    app:myText="@{appointment.email}" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnClinicEmail" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

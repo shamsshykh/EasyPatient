@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorWhite">
+
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/layoutAudio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtTitle"
+        app:layout_constraintBottom_toBottomOf="@+id/txtDuration">
+
+
+        <ImageButton  android:id="@+id/exo_play"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            style="@style/ExoMediaButton.Play"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/colorWhite"
+            android:src="@drawable/ic_play"
+            />
+
+        <ImageButton  android:id="@+id/exo_pause"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:background="@color/colorWhite"
+            style="@style/ExoMediaButton.Pause"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_pause"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <TextView android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text = "Áudio 01 05/06/21"
+        android:textColor="@color/colorText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintStart_toEndOf="@+id/layoutAudio"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="12dp"
+        />
+
+    <TextView android:id="@+id/txtDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text ="4:45 min"
+        android:textColor="@color/colorText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+        app:layout_constraintStart_toStartOf="@+id/txtTitle"
+        android:layout_marginTop="2dp"
+        />
+
+    <com.github.rubensousa.previewseekbar.exoplayer.PreviewTimeBar
+        android:id="@+id/exo_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:previewAnimationEnabled="true"
+        app:played_color="@android:color/black"
+        app:unplayed_color="@color/colorText"
+        app:scrubber_color="@color/colorWhite"
+        app:buffered_color="@color/colorText"
+        app:bar_height="3dp"
+        app:scrubber_enabled_size="8dp"
+        app:scrubber_disabled_size="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtDuration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:previewFrameLayout="@id/layoutAudio"
+        app:previewAutoHide="false"
+        app:previewEnabled="true"
+        tools:visibility="visible"
+        android:visibility="gone"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

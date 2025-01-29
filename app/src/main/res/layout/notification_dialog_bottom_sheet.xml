@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="view"
+            type="com.app.easy_patient.ui.home.dialog.NotificationDialogFragment" />
+
+        <variable
+            name="notification"
+            type="com.app.easy_patient.model.kotlin.Notification" />
+
+        <variable
+            name="suggestedMedicineAdapter"
+            type="com.app.easy_patient.ui.home.adapter.HomeAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_20sdp">
+
+        <TextView android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            tools:text="Pacote de Cuidados"
+            android:text="@{notification.name}"
+            android:textColor="@color/black"
+            android:fontFamily="@font/opensans_semibold"/>
+
+        <TextView android:id="@+id/txtDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+            android:textSize="@dimen/_12ssp"
+            android:text="@{notification.desc}"
+            tools:text="Ative os lmebretes de medicamentos ou suolementos que Dr. Rogerio enviou para voce."
+            android:textColor="@color/color_text"
+            android:fontFamily="@font/opensans_regular"
+            android:layout_marginTop="@dimen/_10sdp"/>
+
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvSuggestedMedicine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDesc"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/notification_medicine_suggestion_layout"
+            app:setAdapter="@{suggestedMedicineAdapter}"
+            app:adapterData="@{view.sugggestedMedList}"
+            tools:itemCount="2"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btnLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvSuggestedMedicine">
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/btnAccept"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textAllCaps="false"
+                android:text="@string/depois_str"
+                android:textColor="@color/colorPrimary"
+                app:cornerRadius="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:onClick="@{() -> view.onCancelClick()}"
+                app:strokeColor="@color/colorPrimary"
+                android:letterSpacing="0"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+            <Button
+                android:id="@+id/btnAccept"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnCancel"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/colorWhite"
+                app:cornerRadius="@dimen/_20sdp"
+                android:text="@string/ativar_str"
+                android:letterSpacing="0"
+                style="@style/Widget.MaterialComponents.Button"
+                android:onClick="@{() -> view.onOpenClick()}"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

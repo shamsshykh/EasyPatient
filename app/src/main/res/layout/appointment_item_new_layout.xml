@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.app.easy_patient.ktx.TheKtxKt"/>
+        <variable
+            name="appointment"
+            type="com.app.easy_patient.model.kotlin.Appointment" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="@dimen/_4sdp"
+        card_view:cardElevation="@dimen/_4sdp"
+        card_view:cardPreventCornerOverlap="false"
+        card_view:cardUseCompatPadding="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_12sdp">
+
+            <ImageView
+                android:id="@+id/imgAppointment"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:src="@drawable/ic_home_appointment"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtAppointmentTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/opensans_regular"
+                android:gravity="center_vertical"
+                android:text="@{TheKtxKt.appointmentDate(appointment, true)}"
+                android:textColor="@color/color_text"
+                android:textSize="@dimen/_14ssp"
+                card_view:layout_constraintBottom_toTopOf="@+id/txtAppointmentDesc"
+                card_view:layout_constraintStart_toEndOf="@+id/imgAppointment"
+                card_view:layout_constraintTop_toTopOf="parent"
+                tools:text="Qui, 05 de dezembro às 09:30" />
+
+            <TextView
+                android:id="@+id/txtAppointmentDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/opensans_regular"
+                android:gravity="center_vertical"
+                android:text="@{appointment.clinic}"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_14ssp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintStart_toEndOf="@+id/imgAppointment"
+                card_view:layout_constraintTop_toBottomOf="@+id/txtAppointmentTitle"
+                tools:text="Clínica Florianópolis" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

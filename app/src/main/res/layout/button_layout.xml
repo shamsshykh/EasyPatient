@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="myText" type="java.lang.String"/>
+        <variable name="mySrc" type="android.graphics.drawable.Drawable"/>
+    </data>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text = "Ir para a clínica"
+        tools:icon="@drawable/ic_car"
+        android:padding="@dimen/_8sdp"
+        android:drawablePadding="@dimen/_8sdp"
+        app:cornerRadius="@dimen/_4sdp"
+        android:text="@{myText}"
+        app:icon="@{mySrc}"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        android:fontFamily="@font/opensans_semibold"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:strokeColor="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:clickable="true"
+        android:gravity="center">
+
+    </com.google.android.material.button.MaterialButton>
+
+</layout>

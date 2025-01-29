@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.appointment.AppointmentFragment">
+
+    <data>
+
+        <import type="com.app.easy_patient.wrappers.Resource"/>
+
+        <variable
+            name="viewmodel"
+            type="com.app.easy_patient.activity.dashboard.DashboardViewModel" />
+
+        <variable
+            name="appointmentAdapter"
+            type="com.app.easy_patient.ui.home.adapter.HomeAdapter" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerViewAppointment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/appointment_item_layout"
+            app:setAdapter="@{appointmentAdapter}"
+            app:adapterDataSet="@{viewmodel.appointmentList}"
+            app:refreshList="@{true}"
+            app:visible_flag="@{viewmodel.appointmentList instanceof Resource.Success}"
+            tools:itemCount="2"/>
+
+        <ImageView
+            android:id="@+id/imgNoAppointment"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/placeholder_appointments"
+            app:layout_constraintBottom_toTopOf="@+id/txtNoAppointment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewAppointment"
+            tools:visibility="gone"
+            app:visible_flag="@{viewmodel.appointmentList instanceof Resource.Empty}"
+            />
+
+        <TextView
+            android:id="@+id/txtNoAppointment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_appointments_str"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerViewAppointment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgNoAppointment"
+            android:textColor="@color/colorText"
+            android:layout_marginTop="16dp"
+            tools:visibility="gone"
+            app:visible_flag="@{viewmodel.appointmentList instanceof Resource.Empty}"/>
+
+        <!--<ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/colorPrimary"
+            app:visible_flag="@{viewmodel.appointmentList instanceof Resource.Loading}" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

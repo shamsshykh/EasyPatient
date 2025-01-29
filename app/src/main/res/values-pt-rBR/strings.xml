@@ -1,0 +1,317 @@
+<resources>
+    <string name="app_name">Easy Patient</string>
+
+    <string name="easy_patient">PACIENTE FÁCIL</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Senha</string>
+    <string name="forgot_password"> <u>Esqueceu sua Senha?</u> </string>
+    <string name="no_internet"> Verifique a conexão com a Internet </string>
+
+    <string name="register">Registro</string>
+    <string name="full_name">Nome Completo</string>
+    <string name="birthdate">Data de Nascimento</string>
+    <string name="confirm_password">Confirmar Senha</string>
+    <string name="confirm">Confirmar</string>
+    <string name="already_have_registration"> <u>Eu Já Possuo Cadastro</u> </string>
+    <string name="sign_up_for_free"> <u>Cadastre-se</u> </string>
+    <string name="change_password"> <u>Alterar Senha</u> </string>
+
+    <string name="appointments">Agendamentos</string>
+    <string name="medicines">Medicamentos / Suplementos</string>
+    <string name="prescriptions">Prescrições</string>
+    <string name="orientations">Orientações</string>
+    <string name="settings">Configurações</string>
+
+    <string name="medicine_name">Nome do Medicamento / Suplemento</string>
+    <string name="dosage">Dose</string>
+    <string name="start_time">Data e hora de início</string>
+    <string name="no_days">Duração do tratamento</string>
+    <string name="frequency">Frequência</string>
+    <string name="days_week">Dias da Semana</string>
+
+    <string name="navigation_drawer_open">Abra a gaveta de navegação</string>
+    <string name="navigation_drawer_close">Fechar gaveta de navegação</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Olá fragmento em branco</string>
+    <string name="gender"><font fgcolor='#80C1AB60'>Gênero</font></string>
+    <string name="name">Nome Completo</string>
+    <string name="delete_photo"><u>Apagar foto</u></string>
+
+
+    <string-array name="gender_array">
+        <item>Masculino</item>
+        <item>Feminino</item>
+    </string-array>
+    <string name="title_activity_maps">Mapa</string>
+    <string name="all_days">Todos os dias</string>
+    <string name="channel_name">EasyPatientNotification</string>
+    <string name="channel_description">Descrição de Notificação</string>
+    <string name="you_did_not_complete_your_registration">Você não concluiu seu registro.\n Deseja concluir agora?
+
+</string>
+    <string name="yes">sim</string>
+    <string name="no">Não</string>
+    <string name="current_password">Senha atual</string>
+    <string name="new_password">Nova Senha</string>
+    <string name="confirm_new_password">Confirmar nova Senha</string>
+    <string name="next">Próximo</string>
+    <string name="sign_up">Cadastre-se</string>
+
+    <string name="pin_content_desc">Campo de entrada de PIN</string>
+    <string name="pin_label_text">Você irá receber um código no e-mail\nregistrado. Insira o código abaixo.</string>
+    <string name="library"><u>Biblioteca</u></string>
+    <string name="photo"><u>foto</u></string>
+    <string name="hours">horas</string>
+    <string name="every">A cada</string>
+    <string name="to_change_or_cancel_the_appointment_contact_the_clinic_using_the_contacts_above">Para alterar ou cancelar a consulta, entre em contato com a clínica usando os contatos acima.</string>
+    <string name="archived_successfully">Arquivado</string>
+    <string name="unarchived_successfully">Desarquivado</string>
+    <string name="terms_and_conditions"><u>termos e Condições</u></string>
+    <string name="i_accept_the">Eu aceito os</string>
+    <string name="terms_conditions"><![CDATA[ Termos & Condições]]></string>
+    <string name="your_agreement">Ao clicar em "Concordar", você está aceitando os termos abaixo.</string>
+    <string name="agree">Concordo</string>
+    <string name="cancel"><u>Cancelar</u></string>
+    <string name="you_have_no_meal_plans_yet">Você não possui Planos Alimentares.</string>
+    <string name="camera_not_available">Câmera não disponível</string>
+    <string name="photo_str">foto</string>
+    <string name="task_cancelled_str">Tarefa cancelada</string>
+    <string name="picture_error_str">A imagem não pode ser carregada.</string>
+    <string name="loading_str">Carregando...</string>
+    <string name="enter_name_str">Insira o nome.</string>
+    <string name="enter_email_str">Digite o e-mail.</string>
+    <string name="enter_crf_str">Insira o CPF.</string>
+    <string name="enter_cpf_str">Insira o CPF.</string>
+    <string name="select_gender_str">por favor selecione um gênero</string>
+    <string name="server_error_str">erro de servidor</string>
+    <string name="profile_updated_str">Perfil atualizado</string>
+    <string name="archived_prescription_str">Prescrições Arquivadas</string>
+    <string name="prescriptions_str">Prescrições</string>
+    <string name="archived_orientation_str">Orientações Ocultas</string>
+    <string name="archived_meal_plan_str">Planos Alimentares Ocultos</string>
+    <string name="server_detail_error_str">Erro do servidor Tente novamente!!</string>
+    <string name="error_str">Erro</string>
+    <string name="alert_str">Alerta</string>
+    <string name="medicine_delete_str">Você quer deletar %1$s?</string>
+    <string name="cancel_str">Cancelar</string>
+    <string name="every_day_str">Todos os dias</string>
+    <string name="monday_str">Segunda-feira</string>
+    <string name="tuesday_str">terça</string>
+    <string name="wednesday_str">quarta-feira</string>
+    <string name="thursday_str">quinta-feira</string>
+    <string name="friday_str">sexta-feira</string>
+    <string name="saturday_str">sábado</string>
+    <string name="sunday_str">Domigo</string>
+    <string name="enter_valid_otp_str">Por favor, insira um código otp válido</string>
+    <string name="enter_valid_user_pass_str">Nome de usuário ou senha inválidos</string>
+    <string name="enter_please_email_str">Por favor, insira o e-mail</string>
+    <string name="enter_please_fullname_str">Por favor, insira o nome completo</string>
+    <string name="enter_please_birthdate_str">Insira a data de nascimento</string>
+    <string name="enter_please_password">Por favor insira a senha</string>
+    <string name="enter_please_confirm_pass_str">Por favor, digite a senha de confirmação</string>
+    <string name="not_match_pass_str">Não corresponde à senha.</string>
+    <string name="please_select_gender_str">Por favor selecione um gênero</string>
+    <string name="account_already_exist_str">O e-mail informado já está em uso. Por favor, tente utilizar outro endereço de e-mail ou recupere a sua senha.</string>
+    <string name="invalid_user_pass_str">Usuário e/ou senha incorreto</string>
+    <string name="med_sup_str">Nome do medicamento / suplemento</string>
+    <string name="type_name_med_str">Digite o nome do medicamento</string>
+    <string name="dosage_str">Dosagens</string>
+    <string name="dosage_desc_str">Ex: 1 comprimido, 2 colheres, 10 gotas ...</string>
+    <string name="no_of_days_str">Número de dias</string>
+    <string name="days_desc_str">Ex: 60 dias, 1 mês, constantemente ...</string>
+    <string name="new_med_title">Novo Lembrete</string>
+    <string name="please_enter_med_name_str">Insira o nome do medicamento / suplemento.</string>
+    <string name="please_enter_dosages_str">Insira as dosagens.</string>
+    <string name="please_enter_start_time_str">Insira a hora de início.</string>
+    <string name="please_enter_no_of_days_str">Insira o número de dias.</string>
+    <string name="please_enter_frequency_str">Por favor, insira a frequência.</string>
+    <string name="please_enter_day_of_week_str">Insira os dias da semana.</string>
+    <string name="pdf_save_str">Um arquivo pdf é salvo como %1$s.pdf</string>
+    <string name="meal_plan_str">Planos Alimentares</string>
+    <string name="forgot_password_str">Esqueceu sua senha</string>
+    <string name="login_str">Faça seu Login</string>
+    <string name="check_internet_str">Verifique a conexão com a Internet</string>
+    <string name="please_accept_terms_str">Aceite os Termos e Condições</string>
+    <string name="user_not_registered_str">Nome de usuário não registrado</string>
+    <string name="permission_request_str">São necessárias permissões para usar o aplicativo.</string>
+    <string name="ok_str">OK</string>
+    <string name="profile_str">Perfil</string>
+    <string name="medicine_str">Medicamentos / Suplementos</string>
+    <string name="change_password_str">Mudar senha</string>
+    <string name="enter_confirm_pass_str">Digite a senha de confirmação.</string>
+    <string name="pass_match_error_str">A confirmação da senha não corresponde à nova senha.</string>
+    <string name="permission_warning_str">Até que você conceda as permissões, não podemos chamar</string>
+    <string name="no_appointments_str">Você não possui Agendamentos.</string>
+    <string name="received_on_str">Recebido em: </string>
+    <string name="specialist_str">Especialista: </string>
+    <string name="notification_str">Notificação</string>
+    <string name="critical_str">Alta Prioridade</string>
+    <string name="critical_desc_str">Permite que o Easy Patient faça notificações por som mesmo quando seu celular está no modo silencioso.</string>
+    <string name="no_medicine_added_str">Você não adicionou nenhum medicamento / suplemento.\n Adicione agora</string>
+    <string name="no_orientation_str">Você não possui Orientações.</string>
+    <string name="no_prescription_str">Você não possui Prescrições.</string>
+    <string name="notify_when_take_med_str">Notificar o horário de tomar o medicamento.</string>
+    <string name="notify_schedule_str">Notificar datas de agendamentos.</string>
+    <string name="schedule_detail_str">Você será notificado duas vezes: 24 horas antes, e 2 horas antes da hora agendada.</string>
+    <string name="states_str">ESTADOS</string>
+    <string name="stop_str">PARE</string>
+    <string name="forward_str">Avançar</string>
+    <string name="skip_permission_str"><u>Mais tarde</u></string>
+    <string name="permission_str">Concordo</string>
+
+    <string name="onboarding_slide1_title">Controle a sua\nsaúde</string>
+    <string name="onboarding_slide1_desc">Forneça acesso aos seus dados de saúde e atividades físicas para que o seu médico possa entender melhor sua rotina</string>
+
+    <string name="onboarding_slide2_title">Personalize o seu\napp</string>
+    <string name="onboarding_slide2_desc">Forneça acesso a seus serviços de câmera e arquivos de imagens para uma experiência personalizada</string>
+
+    <string name="onboarding_slide3_title">Não perca uma\nnotificação</string>
+    <string name="onboarding_slide3_desc">Forneça acesso à seus serviços de notificação para ativar notificações de medicamentos e consultas</string>
+
+    <string name="onboarding_slide4_title">Encontre a melhor\nrota para a sua\nclínica</string>
+    <string name="onboarding_slide4_desc">Forneça acesso a seus serviços de localização para localizar as melhores rotas para as suas clínicas</string>
+    <string name="alert_from_str">Alerta de %1$s</string>
+    <string name="notification_appointment_desc_str">Detalhe da consulta do paciente fácil</string>
+    <string name="waiting_str">Esperando</string>
+    <string name="confirmed_str">Confirmado</string>
+    <string name="accomplished_str">Realizado</string>
+    <string name="waiting_desc_str">Para alterar ou cancelar a consulta, entre em contato com a clínica usando os contatos abaixo.</string>
+    <string name="confirmed_desc_str">Para alterar ou cancelar a consulta, entre em contato com a clínica usando os contatos abaixo.</string>
+    <string name="accomplished_desc_str" />
+    <string name="waiting_title_str">Agendamento aguardando confirmação.</string>
+    <string name="confirmed_title_str">Agendamento confirmado</string>
+    <string name="accomplished_title_str">Esta consulta já foi realizada.</string>
+    <string name="status_str">Status</string>
+    <string name="scheduling_data_str">Dados do Atendimento</string>
+    <string name="time_title_str">Horário</string>
+    <string name="date_title_str">Data</string>
+    <string name="clinic_title_str">Local</string>
+    <string name="specialist_title_str">Responsável</string>
+    <string name="type_title_str">Tipo de Consulta</string>
+    <string name="route_title_str">Rotas</string>
+    <string name="route_address_str">Ir para a clínica</string>
+    <string name="contact_title_str">Contatos</string>
+    <string name="permission_message_str">Por favor, conceda a permissão de localização</string>
+    <string name="address_not_available_str">Endereço não disponível</string>
+    <string name="next_dose_date_time_str">Próxima dose: %1$s às %2$s</string>
+    <string name="delete_medicine_str">Apagar</string>
+    <string name="archive_btn_str">Ocultar</string>
+    <string name="dearchive_btn_st">Mostrar</string>
+    <string name="valid_status_str">Válido</string>
+    <string name="expired_status_str">Expirado</string>
+    <string name="document_str">Recomendações de Saúde</string>
+    <string name="document_arc">Recomendações de Saúde Ocultos</string>
+    <string name="no_document_str">Você não possui\nRecomendações de Saúde.</string>
+    <string name="no_document_arc">Você não possui\nRecomendações de Saúde Ocultos.</string>
+    <string name="audios_str">Áudios</string>
+    <string name="enter_str">Entrar</string>
+    <string name="current_location_not_available_str">Current location not available</string>
+    <string name="doctor_str">Dr(a). %1$s</string>
+    <string name="gender_str">Gênero</string>
+    <string name="sair_str">Sair</string>
+    <string name="photo_medicine_str">Imagem de Medicamento / Suplemento</string>
+    <string name="gallery_str">Galeria</string>
+    <string name="camera_str">Câmera</string>
+    <string name="no_meal_plan_str">Você não possui Planos Alimentares ocultos.</string>
+    <string name="medicine_date_str">%1$s às %2$s</string>
+    <string name="please_enter_correct_time_str">Insira a hora de início correta. A hora de início deve ser 5 minutos à frente.</string>
+    <string name="home_nav_str">Início</string>
+    <string name="med_nav_str">Lembretes</string>
+    <string name="most_nav_str">Mais</string>
+    <string name="username_str">Olá %1$s!</string>
+    <string name="welcome_str">Bem-vindo(a) ao Easy Patient.</string>
+    <string name="menu_options_str">Meus Arquivos</string>
+    <string name="medicine_reminder_str">Medicamentos de Hoje</string>
+    <string name="appointment_remdinder_str">Meus agendamentos</string>
+    <string name="add_medicine_reminder_str">Você não possui nenhum lembrete de medicamentos ou suplementos.</string>
+    <string name="archive_count_str">%1$d arquivos</string>
+    <string name="back_msg_str">Press BACK again to exit</string>
+    <string name="depois_str">Depois</string>
+    <string name="ativar_str">Ativar</string>
+    <string name="adiar_str">Adiar</string>
+    <string name="sim_str">Sim</string>
+    <string name="medicine_reminder_title_str">Você tomou seu medicamento?</string>
+    <string name="medicine_reminder_desc_str">Você não tomou seu medicamento.\nMarcar como tomado?</string>
+    <string name="editar_str">Editar</string>
+    <string name="medicine_reminder_second_title_str">Adiar por quanto tempo?</string>
+    <string name="fifteen_min_str">15min</string>
+    <string name="thirty_min_str">30min</string>
+    <string name="fourty_min_str">40min</string>
+    <string name="one_hour_str">1h</string>
+    <string name="one_n_half_hour_str">1h30</string>
+    <string name="two_hours_str">2h</string>
+    <string name="snooze_text_str">Tomar %1$s daqui a %2$s</string>
+    <string name="dosage_value_str">%1$s</string>
+    <string name="ocultar_str">Ocultar</string>
+    <string name="notify_when_take_med_second_str">Permitir que o aplicativo funcione em segundo plano.</string>
+    <string name="prescriptions_archive_str">Prescrições Ocultas</string>
+    <string name="orientations_detail_str">Visualizar Orientação</string>
+    <string name="share_str">Compartilhar</string>
+    <string name="download_str">Baixar</string>
+    <string name="received_on_new_str">Recebido %1$s</string>
+    <string name="new_str">NOVO</string>
+    <string name="medicine_notification_sub_title_str">Tomar %1$s</string>
+    <string name="change_pass_reg_str"><u>Cadastre-se Gratuitamente</u></string>
+    <string name="day_str">Dia</string>
+    <string name="month_str">Mês</string>
+    <string name="hour">Hora</string>
+    <string name="hour_str">hora</string>
+    <string name="week_str">semana</string>
+    <string name="hours_str">horas</string>
+    <string name="days_cap_str">Dia(s)</string>
+    <string name="days_str">dias</string>
+    <string name="weeks_str">semanas</string>
+    <string name="frequency_value_type_str">A cada %1$d %2$s</string>
+    <string name="nao_str">Não</string>
+    <string name="orientation_archive_msg">Você deseja que esta Orientação \nretorne a lista de Orientações?</string>
+    <string name="prescription_archive_msg">Você deseja que esta Prescrição \nretorne a lista de Prescrições?</string>
+    <string name="meal_plan_archive_msg">Você deseja que este Plano Alimentar \nretorne a lista de Planos Alimentares?</string>
+    <string name="recommendation_archive_msg">Deseja que esta recomendação de saúde \ndevolva a lista de recomendações de saúde?</string>
+    <string name="no_archive_prescription_str">Você não possui Prescrições ocultas.</string>
+    <string name="prescription_detail_str">Visualizar Prescrição</string>
+    <string name="select_duration_str">Tipo de duração</string>
+    <string name="message_str">Mensagem</string>
+    <string name="today_appointment_str">Hoje seu compromisso para %1$s</string>
+    <string name="tomorrow_appointment_str">Amanhã seu compromisso com %1$s</string>
+    <string name="you_have_no_archived_orientations_yet">Você não possui Orientações ocultas.</string>
+    <string name="upcoming_appointment_remdinder_str">Próximo Agendamento</string>
+    <string name="opt_error">Código inválido.</string>
+    <string name="resend_code_str"><u>Reenviar Código</u></string>
+    <string name="resend_msg_str">Não recebeu o código?\nClique aqui:</string>
+    <string name="resend_code_title_str">Cadastre-se</string>
+    <string name="opt_send_successful_str">Código reenviado com sucesso!</string>
+    <string name="opt_send_error">Erro ao gerar OTP</string>
+    <string name="forgot_password_error_str">Não existe uma conta associada a este e-mail.</string>
+    <string name="is_valid_email_str">E-mail inválido</string>
+    <string name="appointment_pending_str">Aguardando</string>
+    <string name="login_error_str">Nome de usuário ou senha inválidos</string>
+    <string name="appointment_confirm_str">Confirmado</string>
+    <string name="appointment_completed_str">Realizado</string>
+    <string name="appointment_notification_title_24hrs_str">Você tem um agendamento para amanhã</string>
+    <string name="appointment_notification_title_2hrs_str">Você tem um agendamento em duas horas</string>
+    <string name="appointment_notification_desc_24hrs_str">Confira as informações da consulta no seu aplicativo</string>
+    <string name="appointment_notification_desc_2hrs_str">Confira as informações da consulta no seu aplicativo</string>
+    <string name="realtime_notify_schedule_str">Receba notificação em tempo real</string>
+    <string name="realtime_notify_detail_str">Para receber a notificação a tempo, Habilite esta permissão</string>
+    <string name="doctor_name_plus_date_str">Dr(a). %1$s em %2$s</string>
+    <string name="open_app_medicine_reminder_called_str">Abrir este aplicativo juntamente com o lembrete de medicamento.</string>
+    <string name="delete_account_str"><u>Deletar conta</u></string>
+    <string name="invalid_user_or_pass_str">Invalid username or password!</string>
+    <string name="delete_account_sub_str">Deletar conta</string>
+    <string name="delete_account_msg_str">Todos os seus dados e horários de medicamentos serão excludídos. Tem certeza de que deseja excluir a conta?</string>
+    <string name="easy_patient_background_running_str">Paciente fácil correndo em segundo plano.</string>
+
+    <!-- <string name="google_maps_key">AIzaSyDDuFk3Oamt-pTg8-00H_5HJi1X5_h5N0M</string>-->
+    <string-array name="duration_array">
+        <item>Dia(s)</item>
+        <item>Semana(s)</item>
+        <item>Mês(es)</item>
+    </string-array>
+
+    <string-array name="frequency_array">
+        <item>Horas</item>
+        <item>Dias</item>
+        <item>Semanas</item>
+    </string-array>
+</resources>

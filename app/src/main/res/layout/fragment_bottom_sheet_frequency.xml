@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".fragment.BottomSheetFrequency">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBorderLines"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginStart="32dp"
+            android:padding="16dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            android:text="@string/frequency" />
+
+        <ImageView
+            android:id="@+id/img_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:padding="16dp"
+            android:src="@drawable/ic_cancel_black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:gravity="center_vertical"
+            android:text="@string/every"
+            android:textColor="@color/colorPrimary"/>
+
+        <com.app.easy_patient.util.WheelView
+            android:id="@+id/main_wv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center_vertical" />
+
+        <TextView
+            android:id="@+id/tv_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:gravity="center_vertical"
+            android:text="@string/hour"
+            android:textColor="@color/colorPrimary"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:text="@string/ok_str"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:paddingStart="@dimen/_40sdp"
+        android:paddingEnd="@dimen/_40sdp"
+        style="@style/Widget.MaterialComponents.Button"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="false"
+        app:cornerRadius="@dimen/_20sdp" />
+</LinearLayout>

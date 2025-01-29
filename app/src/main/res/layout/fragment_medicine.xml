@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.app.easy_patient.wrappers.Resource"/>
+
+        <variable
+            name="adapter"
+            type="com.app.easy_patient.ui.medicine.adapter.MedicineAdapter" />
+
+        <variable
+            name="view"
+            type="com.app.easy_patient.ui.medicine.MedicineFragment" />
+
+        <variable
+            name="viewmodel"
+            type="com.app.easy_patient.activity.dashboard.DashboardViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.medicine.MedicineFragment"
+        android:background="@color/colorWhite">
+
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/recycler_medicine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/medicine_adapter_layout_new"
+            app:setAdapter="@{adapter}"
+            app:adapterDataSet="@{viewmodel.medicineList}"
+            app:refreshList="@{true}"
+            app:visible_flag="@{viewmodel.medicineList instanceof Resource.Success}"
+            tools:itemCount="2"/>
+
+        <TextView android:id="@+id/txtNoMedicine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:drawableTop="@drawable/placeholder_medicines"
+            android:drawablePadding="@dimen/_8sdp"
+            android:drawableBottom="@drawable/ic_add_med_reminder"
+            android:text="@string/no_medicine_added_str"
+            android:textColor="@color/colorText"
+            android:gravity="center"
+            android:fontFamily="@font/opensans_regular"
+            android:textSize="@dimen/_14ssp"
+            android:onClick="@{() -> view.addMedicineClick()}"
+            app:visible_flag="@{viewmodel.medicineList instanceof Resource.Empty}"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

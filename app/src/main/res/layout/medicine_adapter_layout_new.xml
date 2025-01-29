@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.app.easy_patient.ktx.TheKtxKt"/>
+        <import type="com.app.easy_patient.model.kotlin.MedicineKt"/>
+        <variable
+            name="medicine"
+            type="com.app.easy_patient.model.kotlin.Medicine" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/rootItemLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_medicine"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:scaleType="center"
+            tools:src="@drawable/ic_med_1"
+            android:background="@drawable/imageview_circle"
+            app:setMedicineImage="@{medicine}"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/new_medicine"
+            android:paddingStart="@dimen/_6sdp"
+            android:paddingEnd="@dimen/_6sdp"
+            android:text="@string/new_str"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="#146229"
+            android:fontFamily="@font/opensans_regular"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_4sdp"
+            app:layout_constraintTop_toBottomOf="@+id/img_medicine"
+            app:layout_constraintStart_toStartOf="@+id/img_medicine"
+            app:layout_constraintEnd_toEndOf="@+id/img_medicine"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_medicine_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/img_notifications"
+            app:layout_constraintStart_toEndOf="@+id/img_medicine"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Vitamina"
+            android:textSize="20sp"
+            android:fontFamily="@font/opensans_semibold"
+            android:text="@{medicine.name}"/>
+
+        <ImageView
+            android:id="@+id/img_notifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_notifications"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_medicine_name"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:padding="2dp"
+            visible_flag="@{TheKtxKt.critical(medicine)}"/>
+
+        <TextView
+            android:id="@+id/tv_next_dose"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:fontFamily="@font/opensans_semibold"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/img_notifications"
+            app:layout_constraintStart_toStartOf="@+id/tv_medicine_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_medicine_name"
+            tools:text="Próxima dose: Hoje às 12:00h"
+            android:layout_marginEnd="40dp"
+            app:setNextDose="@{medicine}"
+            />
+
+        <TextView
+            android:id="@+id/tv_days_of_week"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/colorText"
+            app:layout_constraintEnd_toStartOf="@+id/img_notifications"
+            app:layout_constraintStart_toStartOf="@+id/tv_next_dose"
+            app:layout_constraintTop_toBottomOf="@+id/tv_next_dose"
+            tools:text="Todos os dias"
+            app:setDaysOfWeek="@{medicine}"/>
+
+        <TextView
+            android:id="@+id/tv_dosage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorText"
+            app:layout_constraintEnd_toEndOf="@+id/tv_days_of_week"
+            app:layout_constraintStart_toStartOf="@+id/tv_days_of_week"
+            app:layout_constraintTop_toBottomOf="@+id/tv_days_of_week"
+            android:textSize="16sp"
+            tools:text="1 pílula"
+            android:text="@{medicine.dosage}"/>
+
+        <TextView
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/textColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_dosage"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:alpha="0.1" />
+
+        <ImageView
+            android:id="@+id/imgNav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_forward"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/separator"
+            android:layout_marginEnd="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

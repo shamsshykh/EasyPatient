@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@drawable/bg_item"
+    android:orientation="horizontal"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/img_medicine"-->
+    <!--        android:layout_width="32dp"-->
+    <!--        android:layout_height="32dp"-->
+    <!--        android:layout_marginRight="16dp"-->
+    <!--        android:layout_gravity="center_vertical"-->
+    <!--        android:src="@drawable/img_medicine_1" />-->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_custom_image"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/circuler_bg"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/medicine_image_custom"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="6dp"
+                android:padding="6dp" />
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_medicine"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="16dp"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="1dp" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_medicine_name"
+            style="@style/tv_style_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vitamin" />
+
+        <TextView
+            android:id="@+id/tv_dosage"
+            style="@style/tv_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_access_time" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_days_of_week"
+                    style="@style/tv_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Every day" />
+
+                <TextView
+                    android:id="@+id/tv_next_dose"
+                    style="@style/tv_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="Next: today at 12h" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_notifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:padding="8dp"
+        android:src="@drawable/ic_notifications"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/img_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:padding="8dp"
+        android:src="@drawable/ic_delete" />
+
+</LinearLayout>

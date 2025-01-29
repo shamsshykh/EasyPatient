@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="menu"
+            type="com.app.easy_patient.model.kotlin.Menu" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_menu_icon">
+
+        <TextView android:id="@+id/txtNotificationBadge"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:background="@drawable/rounded_textview"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:textSize="@dimen/_10ssp"
+            android:text="@{String.valueOf(menu.notificationCount)}"
+            android:visibility="gone"
+            tools:visibility="visible"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            tools:text="1"
+            visible_flag="@{menu.notificationCount > 0}"/>
+
+        <ImageView android:id="@+id/imgMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_meal_menu"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            app:menuIcon="@{menu}"/>
+
+        <TextView android:id="@+id/txtMenuName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:layout_constraintTop_toBottomOf="@+id/imgMenu"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            tools:text="Prescrições"
+            android:text="@{menu.name}"
+            android:textColor="@color/color_text"
+            android:fontFamily="@font/opensans_regular"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginTop="@dimen/_4sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/txtMenuArchive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:fontFamily="@font/opensans_regular"
+            android:text="@{@string/archive_count_str(menu.archiveCount)}"
+            android:textColor="@color/color_text"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txtMenuName"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/txtMenuName"
+            tools:text="3 arquivos" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

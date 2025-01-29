@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorWhite"
+    tools:context=".activity.TermsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:visibility="gone"
+        tools:visibility="visible"
+        style="@style/Theme.EasyPatient.Toolbar"/>
+
+    <TextView android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/terms_conditions"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_18ssp"
+        tools:visibility="gone"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        />
+
+    <TextView android:id="@+id/desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/your_agreement"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_16ssp"
+        tools:visibility="gone"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_16sdp"/>
+
+    <WebView
+        android:id="@+id/tv_terms"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/_10sdp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/layoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        tools:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_agree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/agree"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_12ssp"
+            app:cornerRadius="@dimen/_20sdp"
+            android:fontFamily="@font/opensans_semibold"
+            style="@style/Widget.MaterialComponents.Button"
+            android:letterSpacing="0"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Button
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/cancel"
+            android:textColor="@color/color_secondary"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_12ssp"
+            android:letterSpacing="0"
+            android:fontFamily="@font/opensans_semibold"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
